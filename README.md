@@ -1,4 +1,5 @@
 # Algorithms
-BOJ
 
-Hello!
+Baekjoon Online Judge
+
+https://www.acmicpc.net/
