@@ -17,7 +17,7 @@ int main(){
  
     int i = 0;
     int j = 0;
-    while (P[++i]){ // Find the KMP table
+    while (P[++i]){ // make a KMP table
         if (P[i] == P[j])
             K[i] = ++j;
         else if (j)
