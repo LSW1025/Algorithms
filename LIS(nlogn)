@@ -1,0 +1,27 @@
+/*
+    LIS O(NlogN)
+    using Binary Search
+*/
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+int A[40001];
+int N;
+int main(){
+    int size = 1, temp;
+    scanf("%d", &N);
+    scanf("%d", &temp);
+    A[1] = temp;
+    for (int i = 2; i <= N; i++){
+        scanf("%d", &temp);
+        if (A[size] < temp){ // 마지막 꺼보다 입력 값이 크면 사이즈 하나늘려줌
+            A[++size] = temp;
+        }
+        else{
+            int po = lower_bound(A + 1, A + size + 1, temp) - A; // 마지막 꺼보다 크거나 같으면 lower_bound값 찾아서 교체해줌
+            A[po] = temp;
+        }
+         
+    }
+    printf("%d\n", size);
+}
