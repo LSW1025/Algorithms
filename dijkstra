@@ -55,7 +55,7 @@ int main(){
 	scanf("%d %d", &n, &m);
 	graph.resize(n + 1);
 	dist.resize(n + 1);
-	vector<pii> ans;
+
 	for (int i = 0; i < m; i++){
 		scanf("%d %d", &a, &b, &c);
 		graph[a].push_back(mk(b, c)); // [current][(next, cost)]
