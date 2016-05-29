@@ -1,0 +1,13 @@
+#include <cstdio>
+
+void conversion(int num, int base){
+	if(num == 0) return;
+	conversion(num/base, base);
+	printf("%d", num%base);
+}
+
+int main(){
+	int A, B;
+	scanf("%d %d", &A, &B);
+	conversion(A,B);
+}
