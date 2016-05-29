@@ -1,7 +1,9 @@
 
 bool prime(int num){
 	if(num < 2) return false;
-	for(int i=2; i*i<=num;i++){ // the maximum factor of N is root(N)
+	for(int i=2; i*i<=num;i++){ 
+	// N = root(N) * root(N) 이라서 최대 인수가 root(N)까지
+	// 다르게 표현하면 인수 한쪽은 반드시 root(N)보다 작게되서 이렇게 하면 구할 수 있음
 		if(num % i == 0) return false;
 	}
 	return true;
