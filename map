@@ -1,0 +1,23 @@
+#include <cstdio>
+#include <map>
+using namespace std;
+
+map<long long, int> mp;
+int N;
+long long temp;
+int main(){
+	scanf("%d", &N);
+	for(int i=0;i<N;i++){
+		scanf("%lld", &temp);
+		mp[temp]++; // (key, value)
+	}
+	long long ans = 0;
+	long long t = 0;
+	for(auto& i : mp){ // map 멤버에 접근 하는 방법
+		if(i.second > t){
+			t = i.second;
+			ans = i.first;
+		}
+	}
+	printf("%lld", ans);
+}
