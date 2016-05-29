@@ -1,0 +1,20 @@
+
+bool prime(int num){
+	if(num < 2) return false;
+	for(int i=2; i*i<=num;i++){
+		if(num % i == 0) return false;
+	}
+	return true;
+}
+
+int sieve(int range, int * primeArray, bool * check){
+	int np = 0; // the number of prime
+	for(int i=2;i<=range;i++){
+		if(check[i] == false){
+			primeArray[np++] = i;
+			for(int j=i*i;j<=range;j+=i)
+				check[j] = true;
+		}
+	}
+	return np;
+}
